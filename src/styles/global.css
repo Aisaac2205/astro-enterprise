@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0f172a;
+  /* Slate 900 - Very dark blue/gray */
+  --color-brand-dark: #020617;
+  /* Slate 950 - Almost black */
+  --color-brand-light: #f8fafc;
+  /* Slate 50 - Crisp white/gray */
+  --color-brand-accent: #10b981;
+  /* Emerald 500 - Sharp, minimalist green */
+
+  --font-sans: "Inter", "Roboto", sans-serif;
+  /* Switching to Inter for minimalism */
+}

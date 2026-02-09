@@ -1,0 +1,118 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-brand-light text-brand-dark font-sans">
+        <header
+            class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100"
+        >
+            <nav
+                class="container mx-auto px-4 py-4 flex justify-between items-center"
+            >
+                <a
+                    href="/"
+                    class="text-2xl font-bold text-brand-blue flex items-center gap-2"
+                >
+                    <span class="text-3xl">🔷</span> Enterprise
+                </a>
+                <div class="space-x-6 hidden md:flex">
+                    <a
+                        href="/"
+                        class="hover:text-brand-blue font-medium transition-colors"
+                        >Inicio</a
+                    >
+                    <a
+                        href="/nosotros"
+                        class="hover:text-brand-blue font-medium transition-colors"
+                        >Nosotros</a
+                    >
+                    <a
+                        href="/servicios"
+                        class="hover:text-brand-blue font-medium transition-colors"
+                        >Servicios</a
+                    >
+                    <a
+                        href="/arquitectura"
+                        class="hover:text-brand-blue font-medium transition-colors"
+                        >Arquitectura</a
+                    >
+                </div>
+                <a
+                    href="#contact"
+                    class="hidden md:inline-block bg-brand-accent text-white px-5 py-2 rounded-full font-bold hover:bg-green-600 transition-colors shadow-md hover:shadow-lg"
+                >
+                    Solicitar Demo
+                </a>
+            </nav>
+        </header>
+        <main class="min-h-screen">
+            <slot />
+        </main>
+        <footer class="bg-brand-dark text-white py-12 mt-auto">
+            <div class="container mx-auto px-4 text-center">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-left"
+                >
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-brand-light">
+                            Enterprise
+                        </h4>
+                        <p class="text-gray-400 text-sm">
+                            Líderes en gestión documental y transformación
+                            digital para empresas de alto rendimiento.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-brand-light">
+                            Enlaces
+                        </h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>
+                                <a href="/nosotros" class="hover:text-white"
+                                    >Sobre Nosotros</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/servicios" class="hover:text-white"
+                                    >Servicios</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/arquitectura" class="hover:text-white"
+                                    >Tecnología</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 text-brand-light">
+                            Contacto
+                        </h4>
+                        <p class="text-gray-400 text-sm">info@enterprise.com</p>
+                        <p class="text-gray-400 text-sm">+502 2345-6789</p>
+                    </div>
+                </div>
+                <p class="border-t border-gray-700 pt-8 text-gray-500 text-sm">
+                    &copy; {new Date().getFullYear()} Enterprise Inc. Todos los derechos
+                    reservados.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
