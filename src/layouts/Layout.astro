@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Icon from "../components/ui/Icon";
 
 interface Props {
     title: string;
@@ -29,7 +30,12 @@ const { title } = Astro.props;
                     href="/"
                     class="text-2xl font-bold text-brand-blue flex items-center gap-2"
                 >
-                    <span class="text-3xl">🔷</span> Enterprise
+                    <Icon
+                        name="Box"
+                        className="w-8 h-8 text-brand-blue"
+                        client:only="react"
+                    />
+                    <span class="text-xl font-bold tracking-tight">Nexo</span>
                 </a>
                 <div class="space-x-6 hidden md:flex">
                     <a
@@ -55,11 +61,68 @@ const { title } = Astro.props;
                 </div>
                 <a
                     href="#contact"
-                    class="hidden md:inline-block bg-brand-accent text-white px-5 py-2 rounded-full font-bold hover:bg-green-600 transition-colors shadow-md hover:shadow-lg"
+                    class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-brand-accent text-white font-bold rounded-none hover:bg-green-600 transition-colors shadow-md hover:shadow-lg"
                 >
                     Solicitar Demo
                 </a>
+                <button
+                    id="mobile-nav-toggle"
+                    class="md:hidden inline-flex flex-col justify-center gap-1.5 w-11 h-11 text-brand-blue rounded-none"
+                    type="button"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Abrir menú de navegación</span>
+                    <span
+                        data-line="top"
+                        class="block h-0.5 w-6 bg-current transition-transform duration-300"
+                    ></span>
+                    <span
+                        data-line="middle"
+                        class="block h-0.5 w-6 bg-current transition-opacity duration-300"
+                    ></span>
+                    <span
+                        data-line="bottom"
+                        class="block h-0.5 w-6 bg-current transition-transform duration-300"
+                    ></span>
+                </button>
             </nav>
+            <div
+                id="mobile-nav-panel"
+                class="md:hidden fixed inset-0 bg-brand-blue text-white px-8 pt-24 pb-10 flex flex-col gap-10 translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out border-t border-white/10"
+            >
+                <div class="space-y-5 text-2xl font-bold">
+                    <a href="/" class="block text-white/90 hover:text-white"
+                        >Inicio</a
+                    >
+                    <a
+                        href="/nosotros"
+                        class="block text-white/90 hover:text-white">Nosotros</a
+                    >
+                    <a
+                        href="/servicios"
+                        class="block text-white/90 hover:text-white"
+                        >Servicios</a
+                    >
+                    <a
+                        href="/arquitectura"
+                        class="block text-white/90 hover:text-white"
+                        >Arquitectura</a
+                    >
+                </div>
+                <div class="mt-auto flex flex-col gap-4">
+                    <a
+                        href="#contact"
+                        class="block text-center bg-white text-brand-blue px-4 py-3 font-bold rounded-none"
+                        >Solicitar Demo</a
+                    >
+                    <p
+                        class="text-xs text-white/50 text-center uppercase tracking-widest"
+                    >
+                        Enterprise Platform
+                    </p>
+                </div>
+            </div>
         </header>
         <main class="min-h-screen">
             <slot />
@@ -71,7 +134,7 @@ const { title } = Astro.props;
                 >
                     <div>
                         <h4 class="text-lg font-bold mb-4 text-brand-light">
-                            Enterprise
+                            Nexo
                         </h4>
                         <p class="text-gray-400 text-sm">
                             Líderes en gestión documental y transformación
@@ -104,15 +167,67 @@ const { title } = Astro.props;
                         <h4 class="text-lg font-bold mb-4 text-brand-light">
                             Contacto
                         </h4>
-                        <p class="text-gray-400 text-sm">info@enterprise.com</p>
+                        <p class="text-gray-400 text-sm">info@nexo.com</p>
                         <p class="text-gray-400 text-sm">+502 2345-6789</p>
                     </div>
                 </div>
                 <p class="border-t border-gray-700 pt-8 text-gray-500 text-sm">
-                    &copy; {new Date().getFullYear()} Enterprise Inc. Todos los derechos
+                    &copy; {new Date().getFullYear()} Nexo Inc. Todos los derechos
                     reservados.
                 </p>
             </div>
         </footer>
+        <script is:inline>
+            const toggleButton = document.getElementById("mobile-nav-toggle");
+            const panel = document.getElementById("mobile-nav-panel");
+            const body = document.body;
+
+            const setLineState = (element, classes, isActive) => {
+                if (!element) return;
+                classes.forEach((className) => {
+                    element.classList.toggle(className, isActive);
+                });
+            };
+
+            const updateIconState = (isOpen) => {
+                const topLine =
+                    toggleButton?.querySelector('[data-line="top"]');
+                const middleLine = toggleButton?.querySelector(
+                    '[data-line="middle"]',
+                );
+                const bottomLine = toggleButton?.querySelector(
+                    '[data-line="bottom"]',
+                );
+                setLineState(topLine, ["translate-y-1.5", "rotate-45"], isOpen);
+                setLineState(
+                    bottomLine,
+                    ["-translate-y-1.5", "-rotate-45"],
+                    isOpen,
+                );
+                setLineState(middleLine, ["opacity-0"], isOpen);
+            };
+
+            const setPanelState = (isOpen) => {
+                panel?.classList.toggle("translate-x-0", isOpen);
+                panel?.classList.toggle("opacity-100", isOpen);
+                panel?.classList.toggle("translate-x-full", !isOpen);
+                panel?.classList.toggle("opacity-0", !isOpen);
+                if (isOpen) {
+                    panel?.classList.remove("pointer-events-none");
+                } else {
+                    panel?.classList.add("pointer-events-none");
+                }
+                body.classList.toggle("overflow-hidden", isOpen);
+            };
+
+            toggleButton?.addEventListener("click", () => {
+                const expanded =
+                    toggleButton.getAttribute("aria-expanded") === "true";
+                const nextState = !expanded;
+                toggleButton.setAttribute("aria-expanded", String(nextState));
+                setPanelState(nextState);
+                updateIconState(nextState);
+            });
+        </script>
     </body>
 </html>
