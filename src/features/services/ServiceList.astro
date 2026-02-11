@@ -1,18 +1,22 @@
 ---
 import { getCollection } from "astro:content";
+import Icon from "../../components/ui/Icon";
 
 const services = await getCollection("services");
 ---
 
 <section class="py-12 bg-slate-50">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
                 services.map((service) => (
                     <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-brand-blue hover:shadow-xl transition-all duration-300 group">
                         <div class="text-4xl mb-6 text-brand-blue group-hover:scale-110 transition-transform">
-                            {service.data.icon}
+                            <Icon
+                                name={service.data.icon}
+                                className="w-12 h-12"
+                                client:only="react"
+                            />
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-brand-dark">
                             {service.data.title}
