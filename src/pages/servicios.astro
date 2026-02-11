@@ -3,15 +3,39 @@ import Layout from "../layouts/Layout.astro";
 import ServiceList from "../features/services/ServiceList.astro";
 ---
 
-<Layout title="Servicios | Enterprise">
-    <div class="bg-brand-blue text-white py-16 mb-12">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold mb-4">Nuestros Servicios</h1>
-            <p class="text-xl text-brand-light opacity-90">
-                Tecnología de punta para tu empresa.
-            </p>
+<Layout title="Servicios | Nexo">
+    <!-- Header Hero -->
+    <section class="relative bg-brand-dark py-32 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
+        >
         </div>
-    </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1
+                    class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-6"
+                >
+                    Nuestras Soluciones
+                </h1>
+                <h2
+                    class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+                >
+                    Tecnología de Punta para tu <span class="text-brand-accent"
+                        >Empresa</span
+                    >
+                </h2>
+                <p class="text-gray-400 text-xl font-light max-w-2xl mx-auto">
+                    Descubre cómo nuestras herramientas de gestión documental y
+                    automatización pueden transformar tu negocio.
+                </p>
+            </div>
+        </div>
+        <!-- Gradient overlay bottom -->
+        <div
+            class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-light to-transparent"
+        >
+        </div>
+    </section>
 
     <ServiceList />
 </Layout>
