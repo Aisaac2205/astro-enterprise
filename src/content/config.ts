@@ -5,7 +5,7 @@ const teamCollection = defineCollection({
     schema: z.object({
         name: z.string(),
         role: z.string(),
-        avatarUrl: z.string().url(),
+        avatarUrl: z.string(), // Puede ser URL o iniciales
         bio: z.string().max(180),
         social: z.array(z.object({
             platform: z.enum(['linkedin', 'twitter', 'github', 'email']),
