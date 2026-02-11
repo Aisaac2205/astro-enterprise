@@ -19,7 +19,27 @@ const servicesCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
-        icon: z.string(), // SVG path or icon name
+        icon: z.enum([
+            'Bot',
+            'Box',
+            'Cloud',
+            'Cpu',
+            'FileCheck',
+            'Github',
+            'Linkedin',
+            'Mail',
+            'Map',
+            'MapPin',
+            'PenTool',
+            'Phone',
+            'Scan',
+            'Share2',
+            'ShieldCheck',
+            'Twitter',
+            'Vault',
+            'Workflow',
+            'Zap'
+        ]), // Icon names must match the curated Lucide subset
         features: z.array(z.string()),
         pricing: z.object({
             amount: z.string(),
