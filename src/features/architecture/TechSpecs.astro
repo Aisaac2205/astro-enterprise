@@ -1,0 +1,113 @@
+---
+import { getCollection } from "astro:content";
+import Icon from "../../components/ui/Icon";
+
+const diagrams = await getCollection("architecture");
+
+// Map each entry to a relevant Lucide icon name
+const entryIcons: Record<string, string> = {
+    "cloud-infra": "Cloud",
+    integrations: "Share2",
+    "security-model": "ShieldCheck",
+};
+
+// Map each entry to a subtle accent color
+const entryAccents: Record<string, string> = {
+    "cloud-infra": "text-sky-400",
+    integrations: "text-amber-400",
+    "security-model": "text-brand-accent",
+};
+---
+
+<section class="py-20 bg-brand-dark relative overflow-hidden">
+    <!-- Background accent glow -->
+    <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- Section header -->
+        <div class="text-center mb-16">
+            <span
+                class="text-brand-accent font-bold tracking-widest uppercase text-xs"
+                >Especificaciones</span
+            >
+            <h2
+                class="text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight"
+            >
+                Stack Tecnológico
+            </h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto font-light text-lg">
+                Cada componente seleccionado por su rendimiento, seguridad y
+                compatibilidad enterprise.
+            </p>
+        </div>
+
+        <!-- Specs Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {
+                diagrams.map((diagram) => {
+                    const iconName = entryIcons[diagram.id] || "Cpu";
+                    const accentColor = entryAccents[diagram.id] || "text-brand-accent";
+
+                    return (
+                        <div class="group bg-brand-blue/80 border border-white/10 rounded-xl p-6 backdrop-blur-sm hover:border-white/20 transition-all duration-300 hover:bg-brand-blue">
+                            {/* Card Header */}
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-brand-accent/30 transition-colors">
+                                    <Icon
+                                        name={iconName}
+                                        className={`w-6 h-6 ${accentColor}`}
+                                        client:only="react"
+                                    />
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-bold text-white tracking-tight leading-snug">
+                                        {diagram.data.title}
+                                    </h3>
+                                    <span class="text-[10px] font-mono text-gray-500 uppercase tracking-widest mt-1 block">
+                                        {diagram.data.diagramType}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Specs List */}
+                            {diagram.data.specs && (
+                                <div class="space-y-0">
+                                    {diagram.data.specs.map((spec, i) => (
+                                        <div
+                                            class={`flex items-center justify-between py-3 ${
+                                                i < (diagram.data.specs?.length ?? 0) - 1
+                                                    ? "border-b border-white/5"
+                                                    : ""
+                                            }`}
+                                        >
+                                            <div class="flex items-center gap-2">
+                                                <span class="w-1 h-1 rounded-full bg-brand-accent/60" />
+                                                <span class="text-xs text-gray-400 font-medium">
+                                                    {spec.label}
+                                                </span>
+                                            </div>
+                                            <span class="text-xs font-mono text-white/80 font-semibold bg-white/5 px-2 py-0.5 rounded">
+                                                {spec.value}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Status indicator */}
+                            <div class="mt-5 pt-4 border-t border-white/5 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
+                                <span class="text-[10px] font-mono text-brand-accent uppercase tracking-widest">
+                                    Activo
+                                </span>
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </div>
+</section>
