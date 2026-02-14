@@ -1,6 +1,6 @@
 ---
 name: "Reginaldo Tzic"
-role: "Head of Product"
+role: "Director de Producto"
 avatarUrl: "RT"
 bio: "Experto en UX y Gestión de Producto. Apasionado por crear interfaces intuitivas que simplifican procesos complejos de gestión documental."
 social:

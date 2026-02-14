@@ -1,12 +1,10 @@
 ---
 name: "Isaac Flores"
-role: "Chief Executive Officer"
+role: "DevOps"
 avatarUrl: "IF"
-bio: "Visionario tecnológico con 15 años de experiencia liderando transformaciones digitales en el sector bancario y legal en Europa y LATAM."
+bio: "Visionario tecnológico con años de experiencia liderando transformaciones digitales en el sector bancario y digital en Latinoamérica."
 social:
   - platform: "linkedin"
     url: "https://linkedin.com"
-  - platform: "twitter"
-    url: "https://twitter.com"
 ---
 Isaac lidera la estrategia global de Enterprise, enfocándose en la expansión de mercados y la innovación de producto. Antes de fundar Enterprise, fue CTO en FinTech Solutions.

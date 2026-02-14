@@ -1,6 +1,6 @@
 ---
 name: "Manuel Grijalva"
-role: "CTO & Lead Architect"
+role: "CTO y Arquitecto Principal"
 avatarUrl: "MG"
 bio: "Arquitecto de software especializado en sistemas distribuidos de alta disponibilidad. Ex-Ingeniero Principal en AWS y contribuidor Open Source."
 social:

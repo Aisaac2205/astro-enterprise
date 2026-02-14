@@ -1,6 +1,6 @@
 ---
 name: "Jose Zepeda"
-role: "VP of Engineering"
+role: "Vicepresidente de Ingeniería"
 avatarUrl: "JZ"
 bio: "Líder técnico enfocado en la excelencia operativa y la cultura de ingeniería. Experto en DevOps y metodologías ágiles a gran escala."
 social:
