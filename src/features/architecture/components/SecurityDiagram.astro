@@ -1,0 +1,60 @@
+---
+
+---
+
+<div class="w-full flex flex-col items-center">
+    <div class="flex items-center justify-center gap-2 mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+        <span
+            class="text-[10px] text-brand-accent font-mono uppercase tracking-widest"
+        >
+            zero trust model
+        </span>
+    </div>
+    {/* Concentric security layers */}
+    <div
+        class="relative w-full max-w-[320px] aspect-square flex items-center justify-center"
+    >
+        {/* Outermost layer - WAF */}
+        <div
+            class="absolute inset-0 rounded-2xl border-2 border-red-500/30 bg-red-500/5 flex items-start justify-center pt-3"
+        >
+            <span
+                class="text-[9px] font-mono text-red-400 font-bold tracking-wider"
+                >WAF · ModSecurity</span
+            >
+        </div>
+        {/* Layer 2 - Auth */}
+        <div
+            class="absolute inset-[15%] rounded-xl border-2 border-amber-500/30 bg-amber-500/5 flex items-start justify-center pt-3"
+        >
+            <span
+                class="text-[9px] font-mono text-amber-400 font-bold tracking-wider"
+                >OIDC · OAuth2</span
+            >
+        </div>
+        {/* Layer 3 - Encryption */}
+        <div
+            class="absolute inset-[30%] rounded-lg border-2 border-sky-500/30 bg-sky-500/5 flex items-start justify-center pt-3"
+        >
+            <span
+                class="text-[9px] font-mono text-sky-400 font-bold tracking-wider"
+                >TLS 1.3</span
+            >
+        </div>
+        {/* Core - Data */}
+        <div
+            class="absolute inset-[44%] rounded-md border-2 border-brand-accent/50 bg-brand-accent/10 flex items-center justify-center"
+        >
+            <div class="text-center">
+                <span
+                    class="text-[9px] font-mono text-brand-accent font-bold block"
+                    >AES-256</span
+                >
+                <span
+                    class="w-2 h-2 rounded-full bg-brand-accent inline-block mt-1 animate-pulse"
+                ></span>
+            </div>
+        </div>
+    </div>
+</div>

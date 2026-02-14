@@ -1,14 +1,34 @@
 ---
 import { getCollection } from "astro:content";
+import DiagramTerminal from "./components/DiagramTerminal.astro";
+import DiagramInfo from "./components/DiagramInfo.astro";
+import CloudDiagram from "./components/CloudDiagram.astro";
+import SequenceDiagram from "./components/SequenceDiagram.astro";
+import SecurityDiagram from "./components/SecurityDiagram.astro";
 
 const diagrams = await getCollection("architecture");
 
 // Map diagramType to contextual icon & color
-const diagramMeta: Record<string, { icon: string; color: string; statusLabel: string }> = {
+const diagramMeta: Record<
+    string,
+    { icon: string; color: string; statusLabel: string }
+> = {
     cloud: { icon: "☁", color: "text-sky-400", statusLabel: "CLUSTER ONLINE" },
-    sequence: { icon: "⇄", color: "text-amber-400", statusLabel: "API GATEWAY ACTIVE" },
-    security: { icon: "🛡", color: "text-brand-accent", statusLabel: "ALL LAYERS SECURE" },
-    flowchart: { icon: "⊞", color: "text-purple-400", statusLabel: "PIPELINE RUNNING" },
+    sequence: {
+        icon: "⇄",
+        color: "text-amber-400",
+        statusLabel: "API GATEWAY ACTIVE",
+    },
+    security: {
+        icon: "🛡",
+        color: "text-brand-accent",
+        statusLabel: "ALL LAYERS SECURE",
+    },
+    flowchart: {
+        icon: "⊞",
+        color: "text-purple-400",
+        statusLabel: "PIPELINE RUNNING",
+    },
     er: { icon: "◈", color: "text-pink-400", statusLabel: "SCHEMA SYNCED" },
 };
 ---
@@ -42,7 +62,9 @@ const diagramMeta: Record<string, { icon: string; color: string; statusLabel: st
         <div class="space-y-28">
             {
                 diagrams.map((diagram, index) => {
-                    const meta = diagramMeta[diagram.data.diagramType] || diagramMeta.cloud;
+                    const meta =
+                        diagramMeta[diagram.data.diagramType] ||
+                        diagramMeta.cloud;
                     const isReversed = index % 2 !== 0;
 
                     return (
@@ -51,282 +73,32 @@ const diagramMeta: Record<string, { icon: string; color: string; statusLabel: st
                         >
                             {/* Terminal Window with CSS Diagram */}
                             <div class="lg:w-7/12 w-full">
-                                <div class="relative group">
-                                    {/* Glow effect */}
-                                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-accent/20 to-brand-blue/0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
-
-                                    <div class="bg-brand-blue rounded-xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50">
-                                        {/* Terminal Header */}
-                                        <div class="bg-[#1e293b] px-4 py-3 flex items-center justify-between border-b border-white/5">
-                                            <div class="flex gap-2">
-                                                <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                                                <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                                                <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                                            </div>
-                                            <span class="text-[10px] text-gray-400 font-medium tracking-[0.2em] uppercase font-mono">
-                                                {diagram.data.diagramType === "cloud" && "infra-topology.sys"}
-                                                {diagram.data.diagramType === "sequence" && "api-gateway.flow"}
-                                                {diagram.data.diagramType === "security" && "security-layers.def"}
-                                                {diagram.data.diagramType === "flowchart" && "pipeline.flow"}
-                                                {diagram.data.diagramType === "er" && "schema.erd"}
-                                            </span>
-                                            <div class="flex items-center gap-2">
-                                                <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
-                                                <span class="text-[9px] text-brand-accent font-mono uppercase tracking-wider">
-                                                    {meta.statusLabel}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Diagram Content */}
-                                        <div class="p-6 md:p-8 min-h-[320px] flex items-center justify-center">
-                                            {/* Cloud diagram */}
-                                            {diagram.data.diagramType === "cloud" && (
-                                                <div class="w-full">
-                                                    <div class="flex items-center justify-center gap-2 mb-6">
-                                                        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-                                                        <span class="text-[10px] text-sky-400 font-mono uppercase tracking-widest">
-                                                            multi-region topology
-                                                        </span>
-                                                    </div>
-                                                    <div class="grid grid-cols-4 gap-3">
-                                                        {/* Kubernetes */}
-                                                        <div class="col-span-4 bg-brand-dark/80 border border-white/10 rounded-lg p-4 backdrop-blur-sm">
-                                                            <div class="flex items-center gap-2 mb-3">
-                                                                <span class="w-2 h-2 rounded-full bg-brand-accent" />
-                                                                <span class="text-[11px] font-mono text-brand-accent font-bold">KUBERNETES (EKS)</span>
-                                                            </div>
-                                                            <div class="grid grid-cols-3 gap-2">
-                                                                <div class="bg-white/5 border border-white/5 rounded p-2 text-center">
-                                                                    <span class="text-[10px] font-mono text-gray-400">pod-api-01</span>
-                                                                    <div class="flex justify-center mt-1">
-                                                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="bg-white/5 border border-white/5 rounded p-2 text-center">
-                                                                    <span class="text-[10px] font-mono text-gray-400">pod-api-02</span>
-                                                                    <div class="flex justify-center mt-1">
-                                                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="bg-white/5 border border-white/5 rounded p-2 text-center">
-                                                                    <span class="text-[10px] font-mono text-gray-400">pod-wrk-01</span>
-                                                                    <div class="flex justify-center mt-1">
-                                                                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Connection arrows */}
-                                                        <div class="col-span-4 flex justify-center py-1">
-                                                            <div class="flex items-center gap-4 text-gray-600">
-                                                                <div class="w-16 h-px bg-gradient-to-r from-transparent to-white/20" />
-                                                                <span class="text-[9px] font-mono text-gray-500">TCP/gRPC</span>
-                                                                <div class="w-16 h-px bg-gradient-to-l from-transparent to-white/20" />
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Bottom services */}
-                                                        <div class="col-span-2 bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm">
-                                                            <div class="flex items-center gap-2 mb-1">
-                                                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                                                                <span class="text-[10px] font-mono text-amber-400 font-bold">AURORA DB</span>
-                                                            </div>
-                                                            <span class="text-[9px] font-mono text-gray-500">Global · Multi-AZ</span>
-                                                        </div>
-                                                        <div class="bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm">
-                                                            <div class="flex items-center gap-2 mb-1">
-                                                                <span class="w-1.5 h-1.5 rounded-full bg-red-400" />
-                                                                <span class="text-[10px] font-mono text-red-400 font-bold">REDIS</span>
-                                                            </div>
-                                                            <span class="text-[9px] font-mono text-gray-500">Cluster</span>
-                                                        </div>
-                                                        <div class="bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm">
-                                                            <div class="flex items-center gap-2 mb-1">
-                                                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                                                                <span class="text-[10px] font-mono text-purple-400 font-bold">CDN</span>
-                                                            </div>
-                                                            <span class="text-[9px] font-mono text-gray-500">Edge</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {/* Sequence / Integration diagram */}
-                                            {diagram.data.diagramType === "sequence" && (
-                                                <div class="w-full">
-                                                    <div class="flex items-center justify-center gap-2 mb-6">
-                                                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                                                        <span class="text-[10px] text-amber-400 font-mono uppercase tracking-widest">
-                                                            integration bus
-                                                        </span>
-                                                    </div>
-                                                    {/* Protocol lanes */}
-                                                    <div class="space-y-3">
-                                                        {/* REST lane */}
-                                                        <div class="flex items-center gap-3">
-                                                            <div class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-emerald-400 font-bold">CLIENT</span>
-                                                            </div>
-                                                            <div class="flex-1 relative h-6 flex items-center">
-                                                                <div class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-emerald-500/50 to-amber-500/50" />
-                                                                <div class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10">
-                                                                    <span class="text-[9px] font-mono text-gray-400">REST / JSON</span>
-                                                                </div>
-                                                                <div class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70" />
-                                                            </div>
-                                                            <div class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-amber-400 font-bold">API GW</span>
-                                                            </div>
-                                                        </div>
-                                                        {/* GraphQL lane */}
-                                                        <div class="flex items-center gap-3">
-                                                            <div class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-pink-400 font-bold">WEB</span>
-                                                            </div>
-                                                            <div class="flex-1 relative h-6 flex items-center">
-                                                                <div class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-pink-500/50 to-amber-500/50" />
-                                                                <div class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10">
-                                                                    <span class="text-[9px] font-mono text-gray-400">GraphQL</span>
-                                                                </div>
-                                                                <div class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70" />
-                                                            </div>
-                                                            <div class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-amber-400 font-bold">API GW</span>
-                                                            </div>
-                                                        </div>
-                                                        {/* gRPC lane */}
-                                                        <div class="flex items-center gap-3">
-                                                            <div class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-sky-400 font-bold">SVC</span>
-                                                            </div>
-                                                            <div class="flex-1 relative h-6 flex items-center">
-                                                                <div class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-sky-500/50 to-amber-500/50" />
-                                                                <div class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10">
-                                                                    <span class="text-[9px] font-mono text-gray-400">gRPC / Protobuf</span>
-                                                                </div>
-                                                                <div class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70" />
-                                                            </div>
-                                                            <div class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0">
-                                                                <span class="text-[10px] font-mono text-amber-400 font-bold">API GW</span>
-                                                            </div>
-                                                        </div>
-                                                        {/* Downstream */}
-                                                        <div class="flex justify-center py-2">
-                                                            <div class="flex items-center gap-4 text-gray-600">
-                                                                <div class="w-12 h-px bg-white/10" />
-                                                                <span class="text-[9px] font-mono text-gray-500">↓ mTLS ↓</span>
-                                                                <div class="w-12 h-px bg-white/10" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="grid grid-cols-3 gap-2">
-                                                            <div class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center">
-                                                                <span class="text-[9px] font-mono text-gray-400">SAP</span>
-                                                                <div class="flex justify-center mt-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent" /></div>
-                                                            </div>
-                                                            <div class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center">
-                                                                <span class="text-[9px] font-mono text-gray-400">Salesforce</span>
-                                                                <div class="flex justify-center mt-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent" /></div>
-                                                            </div>
-                                                            <div class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center">
-                                                                <span class="text-[9px] font-mono text-gray-400">Oracle</span>
-                                                                <div class="flex justify-center mt-1"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent" /></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {/* Security diagram */}
-                                            {diagram.data.diagramType === "security" && (
-                                                <div class="w-full flex flex-col items-center">
-                                                    <div class="flex items-center justify-center gap-2 mb-6">
-                                                        <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                                                        <span class="text-[10px] text-brand-accent font-mono uppercase tracking-widest">
-                                                            zero trust model
-                                                        </span>
-                                                    </div>
-                                                    {/* Concentric security layers */}
-                                                    <div class="relative w-full max-w-[320px] aspect-square flex items-center justify-center">
-                                                        {/* Outermost layer - WAF */}
-                                                        <div class="absolute inset-0 rounded-2xl border-2 border-red-500/30 bg-red-500/5 flex items-start justify-center pt-3">
-                                                            <span class="text-[9px] font-mono text-red-400 font-bold tracking-wider">WAF · ModSecurity</span>
-                                                        </div>
-                                                        {/* Layer 2 - Auth */}
-                                                        <div class="absolute inset-[15%] rounded-xl border-2 border-amber-500/30 bg-amber-500/5 flex items-start justify-center pt-3">
-                                                            <span class="text-[9px] font-mono text-amber-400 font-bold tracking-wider">OIDC · OAuth2</span>
-                                                        </div>
-                                                        {/* Layer 3 - Encryption */}
-                                                        <div class="absolute inset-[30%] rounded-lg border-2 border-sky-500/30 bg-sky-500/5 flex items-start justify-center pt-3">
-                                                            <span class="text-[9px] font-mono text-sky-400 font-bold tracking-wider">TLS 1.3</span>
-                                                        </div>
-                                                        {/* Core - Data */}
-                                                        <div class="absolute inset-[44%] rounded-md border-2 border-brand-accent/50 bg-brand-accent/10 flex items-center justify-center">
-                                                            <div class="text-center">
-                                                                <span class="text-[9px] font-mono text-brand-accent font-bold block">AES-256</span>
-                                                                <span class="w-2 h-2 rounded-full bg-brand-accent inline-block mt-1 animate-pulse" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-
-                                        {/* Terminal footer with stats */}
-                                        <div class="bg-[#1e293b] px-4 py-2 flex items-center justify-between border-t border-white/5">
-                                            <span class="text-[9px] font-mono text-gray-500">
-                                                type: {diagram.data.diagramType}
-                                            </span>
-                                            <div class="flex items-center gap-3">
-                                                {diagram.data.specs && (
-                                                    <span class="text-[9px] font-mono text-gray-500">
-                                                        {diagram.data.specs.length} specs
-                                                    </span>
-                                                )}
-                                                <span class="text-[9px] font-mono text-brand-accent">
-                                                    ● OPERATIONAL
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <DiagramTerminal
+                                    title={diagram.data.title}
+                                    statusLabel={meta.statusLabel}
+                                    diagramType={diagram.data.diagramType}
+                                    specs={diagram.data.specs}
+                                >
+                                    {diagram.data.diagramType === "cloud" && (
+                                        <CloudDiagram />
+                                    )}
+                                    {diagram.data.diagramType ===
+                                        "sequence" && <SequenceDiagram />}
+                                    {diagram.data.diagramType ===
+                                        "security" && <SecurityDiagram />}
+                                </DiagramTerminal>
                             </div>
 
                             {/* Content Side */}
                             <div class="lg:w-5/12 w-full">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class={`text-2xl ${meta.color}`}>
-                                        {meta.icon}
-                                    </span>
-                                    <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-widest text-gray-300 rounded-full backdrop-blur-sm">
-                                        {diagram.data.diagramType}
-                                    </span>
-                                </div>
-
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
-                                    {diagram.data.title}
-                                </h3>
-
-                                <p class="text-gray-400 leading-relaxed text-base mb-6 font-light">
-                                    {diagram.data.description}
-                                </p>
-
-                                {/* Inline specs preview */}
-                                {diagram.data.specs && (
-                                    <div class="space-y-2">
-                                        {diagram.data.specs.map((spec) => (
-                                            <div class="flex items-center justify-between py-2 border-b border-white/5">
-                                                <span class="text-xs text-gray-500 font-medium">
-                                                    {spec.label}
-                                                </span>
-                                                <span class="text-xs font-mono text-brand-accent font-semibold">
-                                                    {spec.value}
-                                                </span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
+                                <DiagramInfo
+                                    icon={meta.icon}
+                                    color={meta.color}
+                                    diagramType={diagram.data.diagramType}
+                                    title={diagram.data.title}
+                                    description={diagram.data.description}
+                                    specs={diagram.data.specs}
+                                />
                             </div>
                         </div>
                     );

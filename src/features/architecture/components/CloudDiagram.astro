@@ -1,0 +1,114 @@
+---
+
+---
+
+<div class="w-full">
+    <div class="flex items-center justify-center gap-2 mb-6">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        <span
+            class="text-[10px] text-sky-400 font-mono uppercase tracking-widest"
+        >
+            multi-region topology
+        </span>
+    </div>
+    <div class="grid grid-cols-4 gap-3">
+        {/* Kubernetes */}
+        <div
+            class="col-span-4 bg-brand-dark/80 border border-white/10 rounded-lg p-4 backdrop-blur-sm"
+        >
+            <div class="flex items-center gap-2 mb-3">
+                <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                <span class="text-[11px] font-mono text-brand-accent font-bold"
+                    >KUBERNETES (EKS)</span
+                >
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+                <div
+                    class="bg-white/5 border border-white/5 rounded p-2 text-center"
+                >
+                    <span class="text-[10px] font-mono text-gray-400"
+                        >pod-api-01</span
+                    >
+                    <div class="flex justify-center mt-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                        ></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/5 rounded p-2 text-center"
+                >
+                    <span class="text-[10px] font-mono text-gray-400"
+                        >pod-api-02</span
+                    >
+                    <div class="flex justify-center mt-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                        ></span>
+                    </div>
+                </div>
+                <div
+                    class="bg-white/5 border border-white/5 rounded p-2 text-center"
+                >
+                    <span class="text-[10px] font-mono text-gray-400"
+                        >pod-wrk-01</span
+                    >
+                    <div class="flex justify-center mt-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                        ></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Connection arrows */}
+        <div class="col-span-4 flex justify-center py-1">
+            <div class="flex items-center gap-4 text-gray-600">
+                <div
+                    class="w-16 h-px bg-gradient-to-r from-transparent to-white/20"
+                >
+                </div>
+                <span class="text-[9px] font-mono text-gray-500">TCP/gRPC</span>
+                <div
+                    class="w-16 h-px bg-gradient-to-l from-transparent to-white/20"
+                >
+                </div>
+            </div>
+        </div>
+
+        {/* Bottom services */}
+        <div
+            class="col-span-2 bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm"
+        >
+            <div class="flex items-center gap-2 mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span class="text-[10px] font-mono text-amber-400 font-bold"
+                    >AURORA DB</span
+                >
+            </div>
+            <span class="text-[9px] font-mono text-gray-500"
+                >Global · Multi-AZ</span
+            >
+        </div>
+        <div
+            class="bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm"
+        >
+            <div class="flex items-center gap-2 mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                <span class="text-[10px] font-mono text-red-400 font-bold"
+                    >REDIS</span
+                >
+            </div>
+            <span class="text-[9px] font-mono text-gray-500">Cluster</span>
+        </div>
+        <div
+            class="bg-brand-dark/80 border border-white/10 rounded-lg p-3 backdrop-blur-sm"
+        >
+            <div class="flex items-center gap-2 mb-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                <span class="text-[10px] font-mono text-purple-400 font-bold"
+                    >CDN</span
+                >
+            </div>
+            <span class="text-[9px] font-mono text-gray-500">Edge</span>
+        </div>
+    </div>
+</div>

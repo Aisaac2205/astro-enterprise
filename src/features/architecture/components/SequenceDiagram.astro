@@ -1,0 +1,158 @@
+---
+
+---
+
+<div class="w-full">
+    <div class="flex items-center justify-center gap-2 mb-6">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span
+            class="text-[10px] text-amber-400 font-mono uppercase tracking-widest"
+        >
+            integration bus
+        </span>
+    </div>
+    {/* Protocol lanes */}
+    <div class="space-y-3">
+        {/* REST lane */}
+        <div class="flex items-center gap-3">
+            <div
+                class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-emerald-400 font-bold"
+                    >CLIENT</span
+                >
+            </div>
+            <div class="flex-1 relative h-6 flex items-center">
+                <div
+                    class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-emerald-500/50 to-amber-500/50"
+                >
+                </div>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10"
+                >
+                    <span class="text-[9px] font-mono text-gray-400"
+                        >REST / JSON</span
+                    >
+                </div>
+                <div
+                    class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70"
+                >
+                </div>
+            </div>
+            <div
+                class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-amber-400 font-bold"
+                    >API GW</span
+                >
+            </div>
+        </div>
+        {/* GraphQL lane */}
+        <div class="flex items-center gap-3">
+            <div
+                class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-pink-400 font-bold"
+                    >WEB</span
+                >
+            </div>
+            <div class="flex-1 relative h-6 flex items-center">
+                <div
+                    class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-pink-500/50 to-amber-500/50"
+                >
+                </div>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10"
+                >
+                    <span class="text-[9px] font-mono text-gray-400"
+                        >GraphQL</span
+                    >
+                </div>
+                <div
+                    class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70"
+                >
+                </div>
+            </div>
+            <div
+                class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-amber-400 font-bold"
+                    >API GW</span
+                >
+            </div>
+        </div>
+        {/* gRPC lane */}
+        <div class="flex items-center gap-3">
+            <div
+                class="w-20 bg-brand-dark/80 border border-white/10 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-sky-400 font-bold"
+                    >SVC</span
+                >
+            </div>
+            <div class="flex-1 relative h-6 flex items-center">
+                <div
+                    class="absolute inset-0 h-px top-1/2 bg-gradient-to-r from-sky-500/50 to-amber-500/50"
+                >
+                </div>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bg-brand-blue px-2 z-10"
+                >
+                    <span class="text-[9px] font-mono text-gray-400"
+                        >gRPC / Protobuf</span
+                    >
+                </div>
+                <div
+                    class="absolute right-0 w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-amber-500/70"
+                >
+                </div>
+            </div>
+            <div
+                class="w-24 bg-brand-dark/80 border border-amber-500/20 rounded px-2 py-1.5 text-center shrink-0"
+            >
+                <span class="text-[10px] font-mono text-amber-400 font-bold"
+                    >API GW</span
+                >
+            </div>
+        </div>
+        {/* Downstream */}
+        <div class="flex justify-center py-2">
+            <div class="flex items-center gap-4 text-gray-600">
+                <div class="w-12 h-px bg-white/10"></div>
+                <span class="text-[9px] font-mono text-gray-500">↓ mTLS ↓</span>
+                <div class="w-12 h-px bg-white/10"></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+            <div
+                class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center"
+            >
+                <span class="text-[9px] font-mono text-gray-400">SAP</span>
+                <div class="flex justify-center mt-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                    ></span>
+                </div>
+            </div>
+            <div
+                class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center"
+            >
+                <span class="text-[9px] font-mono text-gray-400"
+                    >Salesforce</span
+                >
+                <div class="flex justify-center mt-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                    ></span>
+                </div>
+            </div>
+            <div
+                class="bg-brand-dark/80 border border-white/10 rounded p-2 text-center"
+            >
+                <span class="text-[9px] font-mono text-gray-400">Oracle</span>
+                <div class="flex justify-center mt-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"
+                    ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

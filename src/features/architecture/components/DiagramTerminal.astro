@@ -1,0 +1,78 @@
+---
+interface Props {
+    title: string;
+    statusLabel: string;
+    diagramType: string;
+    specs?: any[];
+}
+
+const { title, statusLabel, diagramType, specs } = Astro.props;
+---
+
+<div class="relative group">
+    {/* Glow effect */}
+    <div
+        class="absolute -inset-1 bg-gradient-to-r from-brand-accent/20 to-brand-blue/0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"
+    >
+    </div>
+
+    <div
+        class="bg-brand-blue rounded-xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50"
+    >
+        {/* Terminal Header */}
+        <div
+            class="bg-[#1e293b] px-4 py-3 flex items-center justify-between border-b border-white/5"
+        >
+            <div class="flex gap-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+            </div>
+            <span
+                class="text-[10px] text-gray-400 font-medium tracking-[0.2em] uppercase font-mono"
+            >
+                {diagramType === "cloud" && "infra-topology.sys"}
+                {diagramType === "sequence" && "api-gateway.flow"}
+                {diagramType === "security" && "security-layers.def"}
+                {diagramType === "flowchart" && "pipeline.flow"}
+                {diagramType === "er" && "schema.erd"}
+            </span>
+            <div class="flex items-center gap-2">
+                <span
+                    class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"
+                ></span>
+                <span
+                    class="text-[9px] text-brand-accent font-mono uppercase tracking-wider"
+                >
+                    {statusLabel}
+                </span>
+            </div>
+        </div>
+
+        {/* Diagram Content */}
+        <div class="p-6 md:p-8 min-h-[320px] flex items-center justify-center">
+            <slot />
+        </div>
+
+        {/* Terminal footer with stats */}
+        <div
+            class="bg-[#1e293b] px-4 py-2 flex items-center justify-between border-t border-white/5"
+        >
+            <span class="text-[9px] font-mono text-gray-500">
+                type: {diagramType}
+            </span>
+            <div class="flex items-center gap-3">
+                {
+                    specs && (
+                        <span class="text-[9px] font-mono text-gray-500">
+                            {specs.length} specs
+                        </span>
+                    )
+                }
+                <span class="text-[9px] font-mono text-brand-accent">
+                    ● OPERATIONAL
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
