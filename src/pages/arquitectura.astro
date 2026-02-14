@@ -3,58 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import FlowDiagram from "../features/architecture/FlowDiagram.astro";
 import TechSpecs from "../features/architecture/TechSpecs.astro";
 import Icon from "../components/ui/Icon";
+import PageHero from "../components/ui/PageHero.astro";
 ---
 
 <Layout title="Arquitectura | Nexo">
-    <!-- Header Hero -->
-    <section class="relative bg-brand-dark py-32 overflow-hidden">
-        <!-- Subtle grid pattern -->
-        <div
-            class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
-        >
-        </div>
-        <!-- Accent glow -->
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"
-        >
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Badge -->
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
-                >
-                    <span
-                        class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"
-                    ></span>
-                    <span
-                        class="text-[10px] font-medium tracking-widest uppercase text-gray-300 font-mono"
-                        >Infraestructura Técnica</span
-                    >
-                </div>
-
-                <h1
-                    class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight"
-                >
-                    Diseño Robusto y <span class="text-brand-accent"
-                        >Escalable</span
-                    >
-                </h1>
-                <p
-                    class="text-gray-400 text-xl font-light max-w-2xl mx-auto leading-relaxed"
-                >
-                    Arquitectura avanzada de microservicios y nube diseñada para
-                    garantizar alta disponibilidad y seguridad crítica.
-                </p>
-            </div>
-        </div>
-        <!-- Gradient overlay bottom — fade to dark for seamless transition -->
-        <div
-            class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-dark to-transparent"
-        >
-        </div>
-    </section>
+    <PageHero
+        badge="Infraestructura Técnica"
+        title="Diseño Robusto y"
+        titleAccent="Escalable"
+        description="Arquitectura avanzada de microservicios y nube diseñada para garantizar alta disponibilidad y seguridad crítica."
+        bottomOverlayClass="from-brand-dark"
+    />
 
     <!-- Flow Diagrams -->
     <FlowDiagram />
@@ -77,11 +36,7 @@ import Icon from "../components/ui/Icon";
                 <div
                     class="w-16 h-16 bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-6"
                 >
-                    <Icon
-                        name="Cpu"
-                        className="w-8 h-8"
-                        client:only="react"
-                    />
+                    <Icon name="Cpu" className="w-8 h-8" client:only="react" />
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
                     ¿Listo para conocer nuestra infraestructura?
@@ -95,7 +50,9 @@ import Icon from "../components/ui/Icon";
                 </p>
                 <div class="flex flex-col md:flex-row justify-center gap-4">
                     <a
-                        href="#contact"
+                        href="https://wa.me/50237220606?text=Hola,%20me%20gustaría%20solicitar%20una%20demostración%20personalizada%20de%20sus%20servicios%20de%20gestión%20documental%20y%20soluciones%20empresariales.%20Quedo%20a%20la%20espera%20de%20su%20respuesta."
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="bg-white text-brand-dark px-10 py-4 font-semibold hover:bg-gray-200 transition-all min-w-[200px]"
                     >
                         Solicitar Demo
