@@ -2,42 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import TeamGrid from "../features/company/TeamGrid.astro";
 import OfficeLocation from "../features/company/OfficeLocation.astro";
+import PageHero from "../components/ui/PageHero.astro";
 ---
 
 <Layout title="Nosotros | Nexo">
-    <!-- Header Hero -->
-    <section class="relative bg-brand-dark py-32 overflow-hidden">
-        <div
-            class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
-        >
-        </div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1
-                    class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-6"
-                >
-                    Conoce Nuestro Equipo
-                </h1>
-                <h2
-                    class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
-                >
-                    Expertos Comprometidos con tu <span
-                        class="text-brand-accent">Transformación Digital</span
-                    >
-                </h2>
-                <p class="text-gray-400 text-xl font-light max-w-2xl mx-auto">
-                    Profesionales con amplia experiencia en gestión documental,
-                    firma electrónica y automatización de procesos
-                    empresariales.
-                </p>
-            </div>
-        </div>
-        <!-- Gradient overlay bottom -->
-        <div
-            class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-light to-transparent"
-        >
-        </div>
-    </section>
+    <PageHero
+        badge="Conoce Nuestro Equipo"
+        title="Expertos Comprometidos con tu"
+        titleAccent="Transformación Digital"
+        description="Profesionales con amplia experiencia en gestión documental, firma electrónica y automatización de procesos empresariales."
+        bottomOverlayClass="from-brand-light"
+    />
 
     <!-- Team Grid -->
     <TeamGrid />
