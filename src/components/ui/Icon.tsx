@@ -19,16 +19,16 @@ import {
     Vault,
     Workflow,
     Zap,
+    ShoppingCart,
+    Globe,
+    type LucideProps,
 } from "lucide-react";
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+interface IconProps extends LucideProps {
     name: string;
-    size?: number | string;
-    color?: string;
-    className?: string;
 }
 
-const ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+const ICONS: Record<string, React.FC<LucideProps>> = {
     Bot,
     Box,
     Cloud,
@@ -48,6 +48,8 @@ const ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> 
     Vault,
     Workflow,
     Zap,
+    ShoppingCart,
+    Globe,
 };
 
 const Icon: React.FC<IconProps> = ({ name, size = 24, color = "currentColor", className, ...props }) => {

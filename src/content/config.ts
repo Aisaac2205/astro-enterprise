@@ -38,7 +38,9 @@ const servicesCollection = defineCollection({
             'Twitter',
             'Vault',
             'Workflow',
-            'Zap'
+            'Zap',
+            'ShoppingCart',
+            'Globe'
         ]), // Icon names must match the curated Lucide subset
         features: z.array(z.string()),
         pricing: z.object({
