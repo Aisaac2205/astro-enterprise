@@ -1,129 +1,134 @@
 ---
+import { Image } from "astro:assets";
+import heroImage from "../../assets/hero-image.png";
 import Icon from "../../components/ui/Icon";
 ---
 
-<section class="bg-brand-ink-900 text-white pt-40 pb-32 relative overflow-hidden">
-    <!-- Subtle gradient glow -->
-    <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent-500/5 rounded-full blur-[120px] pointer-events-none"
-    >
+<section
+  class="relative min-h-[90vh] flex items-center text-white overflow-hidden"
+>
+  {/* Full-bleed background image */}
+  <div class="absolute inset-0">
+    <Image
+      src={heroImage}
+      alt="DocScan OCR extrayendo datos de CV, DPI y documentos de personal con inteligencia artificial"
+      class="w-full h-full object-cover"
+      width={1600}
+      height={900}
+      format="png"
+    />
+    {/* Dark overlay for text legibility */}
+    <div class="absolute inset-0 bg-brand-ink-900/75"></div>
+    {/* Bottom gradient fade to content */}
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-surface-page to-transparent"></div>
+  </div>
+
+  {/* Content */}
+  <div class="container mx-auto px-4 relative z-10 pt-24 pb-32">
+    <div class="max-w-4xl mx-auto text-center">
+      {/* Eyebrow badge */}
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
+      >
+        <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+        <span class="text-xs font-medium tracking-widest uppercase text-neutral-300"
+          >DocScan OCR</span
+        >
+      </div>
+
+      {/* Headline */}
+      <h1
+        class="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight"
+      >
+        Extrae Datos de <br />
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-600"
+          >Cualquier Documento</span
+        >
+      </h1>
+
+      {/* Description */}
+      <p
+        class="text-xl text-neutral-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+      >
+        Motor OCR dual con IA para RRHH: procesa CVs, DPIs y documentos de
+        personal en la nube con Gemini 3.1 Flash Lite o mantén tus datos
+        locales con LM Studio. Precisión empresarial, privacidad total.
+      </p>
+
+      {/* CTAs */}
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="/servicios"
+          class="bg-white text-brand-ink-900 px-10 py-4 font-semibold hover:bg-neutral-200 transition-all min-w-[200px]"
+        >
+          Explorar Soluciones
+        </a>
+        <a
+          href="https://wa.me/50237220606?text=Hola,%20me%20gustaría%20solicitar%20una%20demostración%20personalizada%20de%20DocScan,%20su%20sistema%20OCR%20con%20IA.%20Quedo%20a%20la%20espera%20de%20su%20respuesta."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white/10 text-white px-10 py-4 font-semibold hover:bg-white/20 transition-all min-w-[200px] border border-white/10"
+        >
+          Solicitar Demo
+        </a>
+      </div>
     </div>
 
-    <div class="container mx-auto px-4 text-center relative z-10">
+    {/* Trust badges */}
+    <div class="mt-20 pt-10 border-t border-white/10">
+      <p
+        class="text-xs text-neutral-400 uppercase tracking-widest mb-6 font-semibold text-center"
+      >
+        Confían en nosotros
+      </p>
+      <div
+        class="flex flex-wrap justify-center gap-12 items-center opacity-70 hover:opacity-100 transition-opacity duration-500"
+      >
+        <!-- TechFlow -->
         <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm"
+          class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
         >
-            <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"
-            ></span>
-            <span
-                class="text-xs font-medium tracking-widest uppercase text-neutral-300"
-                >DocScan OCR</span
-            >
+          <Icon name="Cpu" className="w-8 h-8 text-accent-500" />
+          <span
+            class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
+            >TechFlow</span
+          >
         </div>
 
-        <h1
-            class="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight text-white"
+        <!-- Nebula -->
+        <div
+          class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
         >
-            Extrae Texto de <br />
-            <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-500"
-                >Cualquier Documento</span
-            >
-        </h1>
-
-        <p
-            class="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
-        >
-            Motor OCR dual con IA: procesa documentos en la nube con Gemini 3.1 Flash Lite
-            o mantén tus datos locales con LM Studio. Precisión empresarial, privacidad total.
-        </p>
-
-        <div class="flex flex-col md:flex-row justify-center gap-6">
-            <a
-                href="/servicios"
-                class="bg-white text-brand-ink-900 px-10 py-4 font-semibold hover:bg-neutral-200 transition-all min-w-[200px]"
-            >
-                Explorar Soluciones
-            </a>
-            <a
-                href="https://wa.me/50237220606?text=Hola,%20me%20gustaría%20solicitar%20una%20demostración%20personalizada%20de%20DocScan,%20su%20sistema%20OCR%20con%20IA.%20Quedo%20a%20la%20espera%20de%20su%20respuesta."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-white/10 text-white px-10 py-4 font-semibold hover:bg-white/20 transition-all min-w-[200px]"
-            >
-                Solicitar Demo
-            </a>
+          <Icon name="Cloud" className="w-8 h-8 text-accent-500" />
+          <span
+            class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
+            >Nebula</span
+          >
         </div>
 
-        <div class="mt-24 border-t border-white/5 pt-12">
-            <p
-                class="text-xs text-neutral-500 uppercase tracking-widest mb-6 font-semibold"
-            >
-                Confían en nosotros
-            </p>
-            <div
-                class="flex flex-wrap justify-center gap-12 items-center opacity-70 hover:opacity-100 transition-opacity duration-500"
-            >
-                <!-- TechFlow -->
-                <div
-                    class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
-                >
-                    <Icon
-                        name="Cpu"
-                        className="w-8 h-8 text-accent-500"
-                        client:only="react"
-                    />
-                    <span
-                        class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
-                        >TechFlow</span
-                    >
-                </div>
-
-                <!-- Nebula -->
-                <div
-                    class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
-                >
-                    <Icon
-                        name="Cloud"
-                        className="w-8 h-8 text-accent-500"
-                        client:only="react"
-                    />
-                    <span
-                        class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
-                        >Nebula</span
-                    >
-                </div>
-
-                <!-- CyberDyne -->
-                <div
-                    class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
-                >
-                    <Icon
-                        name="Bot"
-                        className="w-8 h-8 text-accent-500"
-                        client:only="react"
-                    />
-                    <span
-                        class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
-                        >CyberDyne</span
-                    >
-                </div>
-
-                <!-- Vertex -->
-                <div
-                    class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
-                >
-                    <Icon
-                        name="Share2"
-                        className="w-8 h-8 text-accent-500"
-                        client:only="react"
-                    />
-                    <span
-                        class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
-                        >Vertex</span
-                    >
-                </div>
-            </div>
+        <!-- CyberDyne -->
+        <div
+          class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
+        >
+          <Icon name="Bot" className="w-8 h-8 text-accent-500" />
+          <span
+            class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
+            >CyberDyne</span
+          >
         </div>
+
+        <!-- Vertex -->
+        <div
+          class="flex items-center gap-3 group cursor-pointer grayscale hover:grayscale-0 transition-all"
+        >
+          <Icon name="Share2" className="w-8 h-8 text-accent-500" />
+          <span
+            class="font-bold text-xl text-neutral-300 group-hover:text-white transition-colors tracking-tight"
+            >Vertex</span
+          >
+        </div>
+      </div>
     </div>
+  </div>
 </section>
