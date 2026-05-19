@@ -1,10 +1,13 @@
 ---
 name: "Isaac Flores"
-role: "DevOps"
+role: "Ingeniero de Software"
 avatarUrl: "IF"
-bio: "Visionario tecnológico con años de experiencia liderando transformaciones digitales en el sector bancario y digital en Latinoamérica."
+bio: "Líder técnico con visión de producto. Especialista en arquitectura de software, integración de IA y desarrollo de sistemas empresariales escalables."
 social:
   - platform: "linkedin"
     url: "https://linkedin.com"
+  - platform: "github"
+    url: "https://github.com"
 ---
-Isaac lidera la estrategia global de Enterprise, enfocándose en la expansión de mercados y la innovación de producto. Antes de fundar Enterprise, fue CTO en FinTech Solutions.
+
+Isaac lidera el desarrollo de DocScan, definiendo la arquitectura del motor OCR dual (cloud + on-premise) y asegurando que cada línea de código escale con propósito. Su enfoque une ingeniería sólida con visión de producto.

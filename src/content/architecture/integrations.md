@@ -1,16 +1,15 @@
 ---
-title: "Enterprise Integration Bus"
-description: "Conecte Enterprise con su ecosistema existente (SAP, Salesforce, Oracle)."
-imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+title: "Flujo de Procesamiento OCR"
+description: "Secuencia completa desde la captura del documento hasta la extracción estructurada de datos vía IA."
 diagramType: "sequence"
 specs:
-  - label: "Protocolos"
-    value: "REST, GraphQL, gRPC"
-  - label: "Formatos"
-    value: "JSON, XML, Protobuf"
-  - label: "Auth"
-    value: "mTLS, API Keys"
-  - label: "Rate Limit"
-    value: "Token Bucket"
+  - label: "Fuentes"
+    value: "Cámara / eSCL / Upload"
+  - label: "Pre-procesamiento"
+    value: "Rotación, recorte, mejora"
+  - label: "Extracción IA"
+    value: "Gemini Flash / LM Studio"
+  - label: "Salida"
+    value: "JSON / CSV / XML / Webhook"
 ---
-No somos una isla. Nuestra API Gateway maneja millones de peticiones diarias, permitiendo una integración bidireccional en tiempo real con sus sistemas legacy y aplicaciones de terceros. Webhooks para eventos en tiempo real.
+El flujo comienza con la captura: cámara del dispositivo, escáner de red compatible eSCL/AirScan, o carga de archivos. El backend pre-procesa la imagen (rotación automática, recorte de márgenes, mejora de contraste) y la envía al motor OCR seleccionado. El resultado estructurado se entrega vía API REST o webhook en tiempo real.

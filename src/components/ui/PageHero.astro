@@ -13,21 +13,21 @@ const {
     title,
     titleAccent,
     description,
-    bottomOverlayClass = "from-brand-light",
+    bottomOverlayClass = "from-surface-page",
 } = Astro.props;
 ---
 
-<section class="relative bg-brand-dark py-32 overflow-hidden">
-    <!-- Grid background according to 'Nosotros' style -->
+<section class="relative bg-brand-ink-900 py-32 overflow-hidden">
+    <!-- Grid background -->
     <div
-        class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
+        class="absolute inset-0 bg-[linear-gradient(rgba(246,107,14,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(246,107,14,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"
     >
     </div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
             {
                 badge && (
-                    <h1 class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-6">
+                    <h1 class="text-accent-500 font-bold tracking-widest uppercase text-xs mb-6">
                         {badge}
                     </h1>
                 )
@@ -38,11 +38,11 @@ const {
                 {title}
                 {
                     titleAccent && (
-                        <span class="text-brand-accent">{titleAccent}</span>
+                        <span class="text-accent-500">{titleAccent}</span>
                     )
                 }
             </h2>
-            <p class="text-gray-400 text-xl font-light max-w-2xl mx-auto">
+            <p class="text-neutral-400 text-xl font-light max-w-2xl mx-auto">
                 {description}
             </p>
         </div>

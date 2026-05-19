@@ -1,14 +1,15 @@
 ---
-title: "Desarrollo E-commerce"
-description: "Plataformas de comercio electrónico robustas y escalables diseñadas para maximizar las ventas y optimizar la experiencia del cliente."
-icon: "ShoppingCart"
+title: "API REST & Webhooks"
+description: "Integra DocScan con tus sistemas existentes mediante una API moderna, documentada y con webhooks en tiempo real."
+icon: "Workflow"
 features:
-  - "Pasarelas de Pago Integradas"
-  - "Gestión de Inventario en Tiempo Real"
-  - "Optimización de Tasa de Conversión (CRO)"
-  - "Paneles Administrativos Intuitivos"
+  - "API RESTful con autenticación JWT"
+  - "SDKs para Node.js, Python y .NET"
+  - "Webhooks para notificaciones de extracción completada"
+  - "Documentación interactiva Swagger/OpenAPI"
+  - "Rate limiting y quotas configurables por cliente"
 pricing:
-  amount: "Desde $1,200"
-  period: "proyecto"
+  amount: "Desde $299"
+  period: "mensual"
 ---
-Desarrollamos tiendas en línea que no solo se ven bien, sino que venden. Utilizamos tecnologías modernas para asegurar que su plataforma sea rápida, segura y fácil de administrar, permitiéndole enfocarse en lo más importante: su negocio.
+DocScan no es una isla. Conecta el motor OCR con tu ERP, CRM, sistema de archivos o cualquier aplicación mediante nuestra API REST. Recibe notificaciones en tiempo real cuando un documento termina de procesarse, y accede a los datos estructurados en formatos JSON, CSV o XML.

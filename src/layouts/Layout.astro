@@ -15,47 +15,47 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="bg-brand-light text-brand-dark font-sans">
+    <body class="bg-surface-page text-fg-primary font-sans">
         <header
-            class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100"
+            class="bg-white shadow-sm sticky top-0 z-50 border-b border-neutral-100"
         >
             <nav
                 class="container mx-auto px-4 py-4 flex justify-between items-center"
             >
                 <a
                     href="/"
-                    class="text-2xl font-bold text-brand-blue flex items-center gap-2"
+                    class="text-2xl font-bold text-brand-ink-900 flex items-center gap-2"
                 >
-                    <Icon
-                        name="Box"
-                        className="w-8 h-8 text-brand-blue"
-                        client:only="react"
+                    <img
+                        src="/logo.png"
+                        alt="DocScan"
+                        class="w-8 h-8 object-contain"
                     />
-                    <span class="text-xl font-bold tracking-tight">Nexo</span>
+                    <span class="text-xl font-bold tracking-tight">DocScan</span>
                 </a>
                 <div class="space-x-6 hidden md:flex">
                     <a
                         href="/"
-                        class="hover:text-brand-blue font-medium transition-colors"
+                        class="hover:text-brand-500 font-medium transition-colors"
                         >Inicio</a
                     >
                     <a
                         href="/nosotros"
-                        class="hover:text-brand-blue font-medium transition-colors"
+                        class="hover:text-brand-500 font-medium transition-colors"
                         >Nosotros</a
                     >
                     <a
                         href="/servicios"
-                        class="hover:text-brand-blue font-medium transition-colors"
+                        class="hover:text-brand-500 font-medium transition-colors"
                         >Servicios</a
                     >
                     <a
                         href="/arquitectura"
-                        class="hover:text-brand-blue font-medium transition-colors"
+                        class="hover:text-brand-500 font-medium transition-colors"
                         >Arquitectura</a
                     >
                 </div>
@@ -63,13 +63,13 @@ const { title } = Astro.props;
                     href="https://wa.me/50237220606?text=Hola,%20me%20gustaría%20solicitar%20una%20demostración%20personalizada%20de%20sus%20servicios%20de%20gestión%20documental%20y%20soluciones%20empresariales.%20Quedo%20a%20la%20espera%20de%20su%20respuesta."
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-brand-accent text-white font-bold rounded-none hover:bg-green-600 transition-colors shadow-md hover:shadow-lg"
+                    class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-accent-500 text-white font-bold rounded-md hover:bg-accent-600 transition-colors shadow-md hover:shadow-lg"
                 >
                     Solicitar Demo
                 </a>
                 <button
                     id="mobile-nav-toggle"
-                    class="md:hidden inline-flex flex-col justify-center gap-1.5 w-11 h-11 text-brand-blue rounded-none"
+                    class="md:hidden inline-flex flex-col justify-center gap-1.5 w-11 h-11 text-brand-500 rounded-md"
                     type="button"
                     aria-label="Abrir menú"
                     aria-expanded="false"
@@ -91,7 +91,7 @@ const { title } = Astro.props;
             </nav>
             <div
                 id="mobile-nav-panel"
-                class="md:hidden fixed inset-0 bg-brand-blue text-white px-8 pt-24 pb-10 flex flex-col gap-10 translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out border-t border-white/10"
+                class="md:hidden fixed inset-0 bg-brand-700 text-white px-8 pt-24 pb-10 flex flex-col gap-10 translate-x-full opacity-0 pointer-events-none transition-all duration-300 ease-out border-t border-white/10"
             >
                 <div class="space-y-5 text-2xl font-bold">
                     <a href="/" class="block text-white/90 hover:text-white"
@@ -117,13 +117,13 @@ const { title } = Astro.props;
                         href="https://wa.me/50237220606?text=Hola,%20me%20gustaría%20solicitar%20una%20demostración%20personalizada%20de%20sus%20servicios%20de%20gestión%20documental%20y%20soluciones%20empresariales.%20Quedo%20a%20la%20espera%20de%20su%20respuesta."
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="block text-center bg-white text-brand-blue px-4 py-3 font-bold rounded-none"
+                        class="block text-center bg-white text-brand-700 px-4 py-3 font-bold rounded-md"
                         >Solicitar Demo</a
                     >
                     <p
                         class="text-xs text-white/50 text-center uppercase tracking-widest"
                     >
-                        Enterprise Platform
+                        OCR Platform
                     </p>
                 </div>
             </div>
@@ -131,25 +131,26 @@ const { title } = Astro.props;
         <main class="min-h-screen">
             <slot />
         </main>
-        <footer class="bg-brand-dark text-white py-12 mt-auto">
+        <footer class="bg-brand-ink-900 text-white py-12 mt-auto">
             <div class="container mx-auto px-4 text-center">
                 <div
                     class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-left"
                 >
                     <div>
-                        <h4 class="text-lg font-bold mb-4 text-brand-light">
-                            Nexo
+                        <h4 class="text-lg font-bold mb-4 text-neutral-0">
+                            DocScan
                         </h4>
-                        <p class="text-gray-400 text-sm">
-                            Líderes en gestión documental y transformación
-                            digital para empresas de alto rendimiento.
+                        <p class="text-neutral-400 text-sm">
+                            Sistema Web OCR con IA dual: procesamiento en la nube
+                            (Gemini Flash Lite) y on-premise (LM Studio) para máxima
+                            privacidad y flexibilidad.
                         </p>
                     </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-4 text-brand-light">
+                        <h4 class="text-lg font-bold mb-4 text-neutral-0">
                             Enlaces
                         </h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
+                        <ul class="space-y-2 text-neutral-400 text-sm">
                             <li>
                                 <a href="/nosotros" class="hover:text-white"
                                     >Sobre Nosotros</a
@@ -168,15 +169,15 @@ const { title } = Astro.props;
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-bold mb-4 text-brand-light">
+                        <h4 class="text-lg font-bold mb-4 text-neutral-0">
                             Contacto
                         </h4>
-                        <p class="text-gray-400 text-sm">contacto@nexo.com</p>
-                        <p class="text-gray-400 text-sm">+502 3722 0606</p>
+                        <p class="text-neutral-400 text-sm">contacto@docscan.com</p>
+                        <p class="text-neutral-400 text-sm">+502 3722 0606</p>
                     </div>
                 </div>
-                <p class="border-t border-gray-700 pt-8 text-gray-500 text-sm">
-                    &copy; {new Date().getFullYear()} Nexo Inc. Todos los derechos
+                <p class="border-t border-neutral-700 pt-8 text-neutral-500 text-sm">
+                    &copy; {new Date().getFullYear()} DocScan Inc. Todos los derechos
                     reservados.
                 </p>
             </div>

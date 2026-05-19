@@ -1,54 +1,67 @@
-# Nexo - Enterprise Document Management Platform
+# DocScan — Sistema Web OCR con IA
 
-A professional-grade platform for document management and enterprise technology services.
+Landing page de producto para DocScan, un sistema de reconocimiento óptico de caracteres (OCR) potenciado por inteligencia artificial con arquitectura dual: procesamiento en la nube y on-premise.
 
-## Overview
+## Propuesta de Valor
 
-Nexo is a comprehensive solution designed to centralize, digitize, and secure corporate intellectual capital. The platform provides a robust infrastructure for managing document life cycles, electronic signatures, and process automation.
+DocScan transforma documentos físicos y digitales en datos estructurados, accionables y seguros mediante motores de IA de última generación. Diseñado para empresas que necesitan precisión, privacidad y flexibilidad.
 
-## Core Features
+## Motor Dual de IA
 
-- **Document Management**: Centralized repository for critical business documentation.
-- **Certified Digitization**: High-precision OCR processing for converting physical archives into searchable digital assets.
-- **Electronic Signature**: Integrated workflow for legal document signing and timestamping.
-- **Microservices Architecture**: Scalable and secure infrastructure designed for high availability.
-- **Enterprise Services**: Additional solutions including E-commerce development and corporate web presence.
+- **Cloud**: Gemini 3.1 Flash Lite — velocidad y escalabilidad para volúmenes altos.
+- **On-Premise**: LM Studio — privacidad total, datos que nunca salen de tu infraestructura.
 
-## Technical Architecture
+## Stack Técnico
 
-The platform is built with a focus on modularity and maintenance:
+- **Framework**: Astro 5 con React islands
+- **Styling**: Tailwind CSS v4 con design system propio (DocScan Design System)
+- **Tipografía**: Geist Sans + Geist Mono
+- **Icons**: Lucide React
+- **Build**: Static site, optimizado para performance y SEO
 
-- **Frontend**: Built with Astro and React components for optimal performance and developer experience.
-- **Data Layer**: Content-driven architecture using Astro Content Collections with strict Zod validation.
-- **Styling**: Modern, responsive UI implemented with Tailwind CSS and a curated design system.
-- **Icons**: Standardized Lucide-based icon system for visual consistency.
-
-## Project Structure
+## Estructura del Proyecto
 
 ```text
 src/
 ├── content/            # Data Layer (Collections: team, services, architecture)
-├── features/           # Modular UI Components and Business Logic
-├── pages/              # Routing and Page Templates
-├── layouts/            # Global Shell and Common Layout Patterns
-├── components/         # Shared UI Primitives
-└── styles/             # Global CSS and Tailwind Configuration
+│   ├── team/            # Perfiles del equipo
+│   ├── services/        # Servicios/productos ofrecidos
+│   └── architecture/    # Diagramas y especificaciones técnicas
+├── features/            # Componentes modulares UI + lógica de negocio
+├── pages/               # Routing y templates de página
+├── layouts/             # Shells globales y patrones de layout
+├── components/          # Primitives UI compartidos
+└── styles/              # Global CSS y configuración Tailwind
 ```
 
-## Development
+## Design System
 
-### Prerequisites
+El sistema de diseño DocScan está definido en `src/styles/global.css` e incluye:
 
-- Node.js (Latest LTS recommended)
-- PNPM (Recommended package manager)
+- **Raw colors**: rampas `brand-ink`, `brand`, `accent`, `neutral`
+- **Semantic tokens**: surfaces, borders, foregrounds, info/success/warning/danger
+- **Typography**: escala tipográfica con pesos 400/500 únicamente
+- **Shadows**: tinte brand-ink, sin negro puro
+- **Radii**: máximo 12px para mantener consistencia sutil
+- **Animations**: fade, slide, toast, bar-rise — con `prefers-reduced-motion` support
+- **Dark mode**: preparado en estructura, no implementado aún
 
-### Commands
+## Desarrollo
 
-- `pnpm install`: Install project dependencies.
-- `pnpm dev`: Start the local development server.
-- `pnpm build`: Generate a production-ready static build.
-- `pnpm preview`: Preview the production build locally.
+### Requisitos
+
+- Node.js (Latest LTS)
+- PNPM (recomendado)
+
+### Comandos
+
+```bash
+pnpm install    # Instalar dependencias
+pnpm dev       # Servidor de desarrollo local
+pnpm build     # Build estático para producción
+pnpm preview   # Previsualizar build de producción
+```
 
 ---
 
-Property of Nexo Inc. All rights reserved.
+DocScan Inc. Todos los derechos reservados.

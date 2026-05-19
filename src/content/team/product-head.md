@@ -1,10 +1,10 @@
 ---
 name: "Reginaldo Tzic"
-role: "Director de Producto"
+role: "QA Engineer"
 avatarUrl: "RT"
-bio: "Experto en UX y Gestión de Producto. Apasionado por crear interfaces intuitivas que simplifican procesos complejos de gestión documental."
+bio: "Ingeniero de calidad obsesionado con la fiabilidad del OCR. Especialista en pruebas automatizadas, validación de precisión en extracción de texto y seguridad de datos."
 social:
   - platform: "linkedin"
     url: "https://linkedin.com"
 ---
-Reginaldo supervisa el roadmap de producto, asegurando que cada nueva funcionalidad aporte valor real a nuestros clientes. Su enfoque "User-First" define nuestra experiencia de usuario.
+Reginaldo garantiza que DocScan entregue resultados precisos en cada escaneo. Diseña suites de pruebas para validar la extracción de IA, el rendimiento bajo carga y el cumplimiento de estándares de seguridad documental.

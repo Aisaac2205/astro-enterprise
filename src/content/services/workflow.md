@@ -1,14 +1,15 @@
 ---
-title: "Gestión de Workflows"
-description: "Automatice aprobaciones, revisiones y flujos de trabajo documentales complejos sin código."
-icon: "Workflow"
+title: "Seguridad y Cumplimiento"
+description: "Cumplimiento con regulaciones internacionales y seguridad de nivel empresarial en cada etapa del procesamiento."
+icon: "ShieldCheck"
 features:
-  - "Diseñador Visual de Procesos (BPMN)"
-  - "Notificaciones Automáticas (Email/Slack)"
-  - "Control de Versiones de Documentos"
-  - "Audit Trail Completo"
+  - "Cifrado AES-256 en tránsito y en reposo"
+  - "Cumplimiento GDPR, HIPAA y estándares locales"
+  - "Trazabilidad completa: quién, qué y cuándo"
+  - "Roles y permisos granulares por usuario y equipo"
+  - "Auto-eliminación programada de documentos temporales"
 pricing:
-  amount: "$899"
-  period: "mensual"
+  amount: "Incluido"
+  period: "en todos los planes"
 ---
-Elimine los cuellos de botella. Configure reglas de negocio para enrutar facturas, contratos o solicitudes de vacaciones a las personas correctas automáticamente. Visualice el estado de cada proceso en tiempo real.
+La seguridad no es opcional. DocScan cifra todos los documentos desde el momento del escaneo, registra cada acción en un audit trail inmutable, y permite configurar políticas de retención automática. En modo on-premise, tus datos nunca tocan internet.

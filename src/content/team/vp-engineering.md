@@ -1,12 +1,12 @@
 ---
 name: "Jose Zepeda"
-role: "Vicepresidente de Ingeniería"
+role: "Backend Developer"
 avatarUrl: "JZ"
-bio: "Líder técnico enfocado en la excelencia operativa y la cultura de ingeniería. Experto en DevOps y metodologías ágiles a gran escala."
+bio: "Desarrollador backend especializado en APIs de alto rendimiento, procesamiento asíncrono de documentos e integraciones con modelos de IA locales y en la nube."
 social:
-  - platform: "twitter"
-    url: "https://twitter.com"
   - platform: "github"
     url: "https://github.com"
+  - platform: "linkedin"
+    url: "https://linkedin.com"
 ---
-Jose dirige nuestros equipos de ingeniería, implementando prácticas de CI/CD de clase mundial y asegurando la calidad del código en cada despliegue.
+Jose construye la columna vertebral de DocScan: APIs REST robustas, colas de procesamiento de documentos, y la orquestación entre el motor OCR local (LM Studio) y el cloud (Gemini Flash Lite). Rendimiento y fiabilidad en cada endpoint.

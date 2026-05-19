@@ -22,6 +22,7 @@ const servicesCollection = defineCollection({
         icon: z.enum([
             'Bot',
             'Box',
+            'Camera',
             'Cloud',
             'Cpu',
             'FileCheck',

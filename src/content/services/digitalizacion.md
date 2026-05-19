@@ -1,14 +1,15 @@
 ---
-title: "Digitalización Certificada"
-description: "Transforme su archivo físico en un repositorio digital seguro, indexado y legalmente válido."
+title: "OCR con Inteligencia Artificial"
+description: "Extracción de texto, tablas y campos clave de cualquier documento usando modelos de IA de última generación."
 icon: "Scan"
 features:
-  - "OCR Multilingüe de Alta Precisión"
-  - "Firma Digital y Sellado de Tiempo"
-  - "Indexación Automática de Metadatos"
-  - "Cumplimiento Legal (Ley de Firma Electrónica)"
+  - "Reconocimiento de texto impreso y manuscrito"
+  - "Extracción estructurada de tablas y formularios"
+  - "Identificación automática de campos clave (facturas, contratos, etc.)"
+  - "Soporte multilingüe: español, inglés y más idiomas"
+  - "Precisión superior al 99% en documentos legibles"
 pricing:
   amount: "$499"
   period: "mensual"
 ---
-Nuestra solución de digitalización no es solo escanear. Utilizamos motores OCR de IA para entender el contenido de sus documentos, clasificarlos automáticamente y extraer datos clave para alimentar sus sistemas ERP/CRM.
+Nuestro motor OCR va más allá del simple reconocimiento de caracteres. Utilizando Gemini 3.1 Flash Lite en la nube o modelos locales vía LM Studio, DocScan comprende el contexto de tus documentos, extrae relaciones entre datos y los estructura automáticamente para alimentar tus sistemas ERP, CRM o bases de datos.

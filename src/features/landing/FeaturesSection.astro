@@ -2,51 +2,51 @@
 import Icon from "../../components/ui/Icon";
 ---
 
-<section class="py-24 bg-brand-light">
+<section class="py-24 bg-surface-page">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2
-                class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-4"
+                class="text-accent-500 font-bold tracking-widest uppercase text-xs mb-4"
             >
                 Nuestra Tecnología
             </h2>
-            <h3 class="text-3xl md:text-5xl font-bold text-brand-blue mb-6">
-                Gestión Inteligente
+            <h3 class="text-3xl md:text-5xl font-bold text-brand-500 mb-6">
+                OCR Potenciado por IA
             </h3>
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg font-light">
-                Más que un archivo digital, una plataforma integral que entiende
-                sus documentos.
+            <p class="text-fg-secondary max-w-2xl mx-auto text-lg font-light">
+                Más que un escáner: un motor inteligente que comprende el
+                contenido de tus documentos y lo convierte en datos accionables.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Feature 1 -->
             <div
-                class="group p-8 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300"
+                class="group p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-200 hover:shadow-xl transition-all duration-300"
             >
                 <div
-                    class="w-12 h-12 rounded-lg bg-brand-blue/5 text-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors"
+                    class="w-12 h-12 rounded-lg bg-brand-500/5 text-brand-500 flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors"
                 >
                     <Icon
-                        name="FileCheck"
+                        name="Scan"
                         className="w-6 h-6"
                         client:only="react"
                     />
                 </div>
-                <h4 class="text-xl font-bold text-brand-blue mb-3">
-                    Digitalización Certificada
+                <h4 class="text-xl font-bold text-brand-500 mb-3">
+                    Motor OCR Dual
                 </h4>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Convierta papel en datos con OCR avanzado y cumplimiento
-                    legal garantizado para auditorías.
+                <p class="text-neutral-500 leading-relaxed text-sm">
+                    Procesa documentos con Gemini 3.1 Flash Lite en la nube
+                    o mantén el control total con LM Studio on-premise.
                 </p>
             </div>
             <!-- Feature 2 -->
             <div
-                class="group p-8 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300"
+                class="group p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-200 hover:shadow-xl transition-all duration-300"
             >
                 <div
-                    class="w-12 h-12 rounded-lg bg-brand-blue/5 text-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors"
+                    class="w-12 h-12 rounded-lg bg-brand-500/5 text-brand-500 flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors"
                 >
                     <Icon
                         name="ShieldCheck"
@@ -54,20 +54,20 @@ import Icon from "../../components/ui/Icon";
                         client:only="react"
                     />
                 </div>
-                <h4 class="text-xl font-bold text-brand-blue mb-3">
-                    Seguridad Bancaria
+                <h4 class="text-xl font-bold text-brand-500 mb-3">
+                    Privacidad Total
                 </h4>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Cifrado AES-256, controles de acceso granulares y
-                    trazabilidad completa de cada acción.
+                <p class="text-neutral-500 leading-relaxed text-sm">
+                    Modo on-premise: tus documentos nunca salen de tu red.
+                    Cumplimiento GDPR, HIPAA y estándares empresariales.
                 </p>
             </div>
             <!-- Feature 3 -->
             <div
-                class="group p-8 bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300"
+                class="group p-8 bg-white rounded-2xl border border-neutral-100 hover:border-neutral-200 hover:shadow-xl transition-all duration-300"
             >
                 <div
-                    class="w-12 h-12 rounded-lg bg-brand-blue/5 text-brand-blue flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors"
+                    class="w-12 h-12 rounded-lg bg-brand-500/5 text-brand-500 flex items-center justify-center mb-6 group-hover:bg-brand-500 group-hover:text-white transition-colors"
                 >
                     <Icon
                         name="Zap"
@@ -75,12 +75,12 @@ import Icon from "../../components/ui/Icon";
                         client:only="react"
                     />
                 </div>
-                <h4 class="text-xl font-bold text-brand-blue mb-3">
-                    Automatización
+                <h4 class="text-xl font-bold text-brand-500 mb-3">
+                    Extracción Estructurada
                 </h4>
-                <p class="text-gray-500 leading-relaxed text-sm">
-                    Reduzca tiempos de aprobación en un 80% con motores de
-                    workflow visuales y notificaciones.
+                <p class="text-neutral-500 leading-relaxed text-sm">
+                    No solo texto: campos clave, tablas, firmas y metadatos
+                    extraídos automáticamente con precisión de IA.
                 </p>
             </div>
         </div>
@@ -88,7 +88,7 @@ import Icon from "../../components/ui/Icon";
         <div class="mt-16 text-center">
             <a
                 href="/servicios"
-                class="text-brand-blue font-semibold hover:text-brand-dark transition-colors inline-flex items-center gap-2 text-sm uppercase tracking-wide border-b border-transparent hover:border-brand-dark pb-1"
+                class="text-brand-500 font-semibold hover:text-brand-ink-700 transition-colors inline-flex items-center gap-2 text-sm uppercase tracking-wide border-b border-transparent hover:border-brand-ink-700 pb-1"
             >
                 Ver características
                 <span class="group-hover:translate-x-1 transition-transform"

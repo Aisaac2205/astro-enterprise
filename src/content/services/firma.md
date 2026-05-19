@@ -1,14 +1,15 @@
 ---
-title: "Firma Electrónica Avanzada"
-description: "Firme contratos y acuerdos legalmente vinculantes desde cualquier dispositivo y lugar."
-icon: "PenTool"
+title: "Motor Dual: Cloud + On-Premise"
+description: "Flexibilidad total para procesar documentos en la nube o mantener el control total con procesamiento local."
+icon: "Cloud"
 features:
-  - "Validez Legal Internacional (eIDAS)"
-  - "Autenticación Multifactor (SMS/Email)"
-  - "Firma Biométrica en Tablet"
-  - "Integración API Rest"
+  - "Cloud: Gemini 3.1 Flash Lite para velocidad y escalabilidad"
+  - "On-Premise: LM Studio para máxima privacidad de datos"
+  - "Cambio de motor en tiempo real sin reinicio"
+  - "Datos sensibles nunca salen de tu red en modo local"
+  - "Modelos entrenables con tus propios documentos"
 pricing:
-  amount: "$1.20"
-  period: "por firma"
+  amount: "Consultar"
+  period: "licencia anual"
 ---
-Cierre tratos más rápido. Nuestra plataforma de firma electrónica cumple con las regulaciones más estrictas, ofreciendo una experiencia fluida para sus clientes y total seguridad jurídica para su empresa.
+DocScan es el único sistema OCR que te permite elegir dónde procesar tus documentos. Usa el modo cloud para volúmenes masivos y velocidad, o activa el modo on-premise para documentos confidenciales que jamás deben salir de tu infraestructura. La transición entre modos es instantánea y transparente para el usuario.

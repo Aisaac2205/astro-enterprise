@@ -5,59 +5,37 @@ import DiagramInfo from "./components/DiagramInfo.astro";
 import CloudDiagram from "./components/CloudDiagram.astro";
 import SequenceDiagram from "./components/SequenceDiagram.astro";
 import SecurityDiagram from "./components/SecurityDiagram.astro";
+import IconComponent from "../../components/ui/Icon";
 
 const diagrams = await getCollection("architecture");
 
-// Map diagramType to contextual icon & color
+// Map diagramType to contextual Lucide icon & color
 const diagramMeta: Record<
     string,
     { icon: string; color: string; statusLabel: string }
 > = {
-    cloud: { icon: "☁", color: "text-sky-400", statusLabel: "CLUSTER ONLINE" },
+    cloud: { icon: "Cloud", color: "text-brand-400", statusLabel: "CLUSTER ONLINE" },
     sequence: {
-        icon: "⇄",
-        color: "text-amber-400",
+        icon: "ArrowLeftRight",
+        color: "text-accent-400",
         statusLabel: "API GATEWAY ACTIVE",
     },
     security: {
-        icon: "🛡",
-        color: "text-brand-accent",
+        icon: "ShieldCheck",
+        color: "text-accent-500",
         statusLabel: "ALL LAYERS SECURE",
     },
     flowchart: {
-        icon: "⊞",
-        color: "text-purple-400",
+        icon: "Workflow",
+        color: "text-brand-200",
         statusLabel: "PIPELINE RUNNING",
     },
-    er: { icon: "◈", color: "text-pink-400", statusLabel: "SCHEMA SYNCED" },
+    er: { icon: "Database", color: "text-accent-200", statusLabel: "SCHEMA SYNCED" },
 };
 ---
 
-<section class="py-20 bg-brand-dark relative overflow-hidden">
-    <!-- Subtle grid background -->
-    <div
-        class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"
-    >
-    </div>
-
+<section class="py-20 bg-surface-page relative overflow-hidden">
     <div class="container mx-auto px-4 relative z-10">
-        <!-- Section header -->
-        <div class="text-center mb-20">
-            <span
-                class="text-brand-accent font-bold tracking-widest uppercase text-xs"
-                >Diagramas del Sistema</span
-            >
-            <h2
-                class="text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight"
-            >
-                Arquitectura en Detalle
-            </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto font-light text-lg">
-                Cada módulo diseñado para máxima resiliencia, seguridad y
-                rendimiento.
-            </p>
-        </div>
-
         <!-- Diagrams -->
         <div class="space-y-28">
             {
@@ -98,6 +76,7 @@ const diagramMeta: Record<
                                     title={diagram.data.title}
                                     description={diagram.data.description}
                                     specs={diagram.data.specs}
+                                    iconComponent={IconComponent}
                                 />
                             </div>
                         </div>

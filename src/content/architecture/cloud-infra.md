@@ -1,16 +1,15 @@
 ---
-title: "Cloud Native Infrastructure"
-description: "Arquitectura basada en Kubernetes y Serverless para máxima escalabilidad."
-imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+title: "Infraestructura Dual: Cloud + On-Premise"
+description: "Arquitectura híbrida que permite procesar documentos en la nube o localmente, según requisitos de privacidad y rendimiento."
 diagramType: "cloud"
 specs:
+  - label: "Motor Cloud"
+    value: "Gemini 3.1 Flash Lite"
+  - label: "Motor Local"
+    value: "LM Studio (GPU/CPU)"
   - label: "Orquestación"
-    value: "Kubernetes (EKS)"
-  - label: "Database"
-    value: "Aurora Global DB"
-  - label: "Caching"
-    value: "Redis Cluster"
-  - label: "CDN"
-    value: "CloudFront Edge"
+    value: "Docker + Kubernetes"
+  - label: "Escaneo"
+    value: "WebRTC / eSCL / AirScan"
 ---
-Nuestra plataforma reside en una arquitectura multi-región activa-activa. Utilizamos contenedores Docker orquestados por Kubernetes para garantizar que el sistema escale automáticamente según la carga de trabajo, sin intervención humana.
+DocScan opera en dos modos: cloud para velocidad y escalabilidad, y on-premise para máxima privacidad. El motor de orquestación detecta automáticamente qué backend usar según la configuración del tenant, sin cambios en el frontend. En modo local, los documentos nunca salen de tu red.

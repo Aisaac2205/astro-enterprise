@@ -12,12 +12,12 @@ const { title, statusLabel, diagramType, specs } = Astro.props;
 <div class="relative group">
     {/* Glow effect */}
     <div
-        class="absolute -inset-1 bg-gradient-to-r from-brand-accent/20 to-brand-blue/0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"
+        class="absolute -inset-1 bg-gradient-to-r from-accent-500/20 to-brand-500/0 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700"
     >
     </div>
 
     <div
-        class="bg-brand-blue rounded-xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50"
+        class="bg-brand-500 rounded-xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50"
     >
         {/* Terminal Header */}
         <div
@@ -29,7 +29,7 @@ const { title, statusLabel, diagramType, specs } = Astro.props;
                 <div class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
             </div>
             <span
-                class="text-[10px] text-gray-400 font-medium tracking-[0.2em] uppercase font-mono"
+                class="text-[10px] text-neutral-400 font-medium tracking-[0.2em] uppercase font-mono"
             >
                 {diagramType === "cloud" && "infra-topology.sys"}
                 {diagramType === "sequence" && "api-gateway.flow"}
@@ -39,10 +39,10 @@ const { title, statusLabel, diagramType, specs } = Astro.props;
             </span>
             <div class="flex items-center gap-2">
                 <span
-                    class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"
+                    class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"
                 ></span>
                 <span
-                    class="text-[9px] text-brand-accent font-mono uppercase tracking-wider"
+                    class="text-[9px] text-accent-500 font-mono uppercase tracking-wider"
                 >
                     {statusLabel}
                 </span>
@@ -58,18 +58,18 @@ const { title, statusLabel, diagramType, specs } = Astro.props;
         <div
             class="bg-[#1e293b] px-4 py-2 flex items-center justify-between border-t border-white/5"
         >
-            <span class="text-[9px] font-mono text-gray-500">
+            <span class="text-[9px] font-mono text-neutral-500">
                 type: {diagramType}
             </span>
             <div class="flex items-center gap-3">
                 {
                     specs && (
-                        <span class="text-[9px] font-mono text-gray-500">
+                        <span class="text-[9px] font-mono text-neutral-500">
                             {specs.length} specs
                         </span>
                     )
                 }
-                <span class="text-[9px] font-mono text-brand-accent">
+                <span class="text-[9px] font-mono text-accent-500">
                     ● OPERATIONAL
                 </span>
             </div>

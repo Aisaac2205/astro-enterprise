@@ -5,29 +5,29 @@ import Icon from "../../components/ui/Icon";
 const services = await getCollection("services");
 ---
 
-<section class="py-12 bg-slate-50">
+<section class="py-12 bg-surface-page">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
                 services.map((service) => (
-                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:border-brand-blue hover:shadow-xl transition-all duration-300 group">
-                        <div class="text-4xl mb-6 text-brand-blue group-hover:scale-110 transition-transform">
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-neutral-100 hover:border-brand-500 hover:shadow-xl transition-all duration-300 group">
+                        <div class="text-4xl mb-6 text-brand-500 group-hover:scale-110 transition-transform">
                             <Icon
                                 name={service.data.icon}
                                 className="w-12 h-12"
                                 client:only="react"
                             />
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-brand-dark">
+                        <h3 class="text-xl font-bold mb-3 text-brand-ink-700">
                             {service.data.title}
                         </h3>
-                        <p class="text-gray-500 mb-6 leading-relaxed">
+                        <p class="text-neutral-500 mb-6 leading-relaxed">
                             {service.data.description}
                         </p>
                         <ul class="space-y-3">
                             {service.data.features.map((feature) => (
-                                <li class="flex items-start text-sm text-gray-600">
-                                    <span class="mr-2 text-brand-accent font-bold">
+                                <li class="flex items-start text-sm text-neutral-600">
+                                    <span class="mr-2 text-accent-500 font-bold">
                                         ✓
                                     </span>
                                     {feature}

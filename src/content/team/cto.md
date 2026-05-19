@@ -1,12 +1,10 @@
 ---
 name: "Manuel Grijalva"
-role: "CTO y Arquitecto Principal"
+role: "UI/UX Designer"
 avatarUrl: "MG"
-bio: "Arquitecto de software especializado en sistemas distribuidos de alta disponibilidad. Ex-Ingeniero Principal en AWS y contribuidor Open Source."
+bio: "Diseñador de experiencias digitales enfocado en usabilidad, accesibilidad y sistemas de diseño coherentes. Convencido de que menos es más, pero menos con intención."
 social:
-  - platform: "github"
-    url: "https://github.com"
   - platform: "linkedin"
     url: "https://linkedin.com"
 ---
-Manuel es el cerebro detrás de nuestra arquitectura de microservicios. Su obsesión por la escalabilidad y la seguridad garantiza que nuestra plataforma opere con un 99.99% de uptime.
+Manuel diseña la interfaz de DocScan con una premisa clara: la tecnología compleja debe sentirse simple. Su trabajo abarca desde el sistema de diseño hasta los micro-interactions que hacen que el OCR sea intuitivo.

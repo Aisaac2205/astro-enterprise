@@ -1,12 +1,12 @@
 ---
-// OfficeLocation.astro - Sección de ubicación de oficina con estilo Enterprise
+// OfficeLocation.astro - Sección de ubicación de oficina DocScan
 import Icon from "../../components/ui/Icon";
 ---
 
-<section class="py-24 bg-brand-dark relative overflow-hidden">
+<section class="py-24 bg-brand-ink-900 relative overflow-hidden">
     <!-- Subtle grid background -->
     <div
-        class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"
+        class="absolute inset-0 bg-[linear-gradient(rgba(246,107,14,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(246,107,14,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"
     >
     </div>
 
@@ -16,23 +16,23 @@ import Icon from "../../components/ui/Icon";
                 <!-- Información de contacto -->
                 <div>
                     <h2
-                        class="text-brand-accent font-bold tracking-widest uppercase text-xs mb-4"
+                        class="text-accent-500 font-bold tracking-widest uppercase text-xs mb-4"
                     >
                         Ubicación
                     </h2>
                     <h3 class="text-3xl md:text-5xl font-bold text-white mb-6">
                         Visítanos en Nuestras Oficinas
                     </h3>
-                    <p class="text-gray-400 text-lg font-light mb-12">
+                    <p class="text-neutral-400 text-lg font-light mb-12">
                         Estamos ubicados en el corazón de Jutiapa, listos para
-                        atender tus necesidades de gestión documental.
+                        ayudarte a implementar OCR inteligente en tu empresa.
                     </p>
 
                     <div class="space-y-8">
                         <!-- Dirección -->
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-accent flex items-center justify-center flex-shrink-0"
+                                class="w-12 h-12 rounded-xl bg-brand-500/10 text-accent-500 flex items-center justify-center flex-shrink-0"
                             >
                                 <Icon
                                     name="MapPin"
@@ -44,7 +44,7 @@ import Icon from "../../components/ui/Icon";
                                 <h4 class="text-white font-semibold mb-2">
                                     Dirección
                                 </h4>
-                                <p class="text-gray-400 font-light">
+                                <p class="text-neutral-400 font-light">
                                     Centro Comercial Metroplaza Jutiapa<br />
                                     Jutiapa, Guatemala
                                 </p>
@@ -54,7 +54,7 @@ import Icon from "../../components/ui/Icon";
                         <!-- Horario -->
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-accent flex items-center justify-center flex-shrink-0"
+                                class="w-12 h-12 rounded-xl bg-brand-500/10 text-accent-500 flex items-center justify-center flex-shrink-0"
                             >
                                 <Icon
                                     name="Clock"
@@ -66,7 +66,7 @@ import Icon from "../../components/ui/Icon";
                                 <h4 class="text-white font-semibold mb-2">
                                     Horario de Atención
                                 </h4>
-                                <p class="text-gray-400 font-light">
+                                <p class="text-neutral-400 font-light">
                                     Lunes a Viernes: 9:00 AM - 6:00 PM<br />
                                     Sábado: 9:00 AM - 1:00 PM
                                 </p>
@@ -76,7 +76,7 @@ import Icon from "../../components/ui/Icon";
                         <!-- Teléfono -->
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-accent flex items-center justify-center flex-shrink-0"
+                                class="w-12 h-12 rounded-xl bg-brand-500/10 text-accent-500 flex items-center justify-center flex-shrink-0"
                             >
                                 <Icon
                                     name="Phone"
@@ -88,7 +88,7 @@ import Icon from "../../components/ui/Icon";
                                 <h4 class="text-white font-semibold mb-2">
                                     Teléfono
                                 </h4>
-                                <p class="text-gray-400 font-light">
+                                <p class="text-neutral-400 font-light">
                                     +502 3722 0606<br />
                                     Atención inmediata vía WhatsApp
                                 </p>
@@ -98,7 +98,7 @@ import Icon from "../../components/ui/Icon";
                         <!-- Email -->
                         <div class="flex items-start gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-brand-blue/10 text-brand-accent flex items-center justify-center flex-shrink-0"
+                                class="w-12 h-12 rounded-xl bg-brand-500/10 text-accent-500 flex items-center justify-center flex-shrink-0"
                             >
                                 <Icon
                                     name="Mail"
@@ -110,7 +110,7 @@ import Icon from "../../components/ui/Icon";
                                 <h4 class="text-white font-semibold mb-2">
                                     Email
                                 </h4>
-                                <p class="text-gray-400 font-light">
+                                <p class="text-neutral-400 font-light">
                                     contacto@nexo.com<br />
                                     soporte@nexo.com
                                 </p>
@@ -123,12 +123,12 @@ import Icon from "../../components/ui/Icon";
                 <div class="relative group">
                     {/* Glow effect */}
                     <div
-                        class="absolute -inset-4 bg-brand-accent/10 rounded-[2rem] blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"
+                        class="absolute -inset-4 bg-accent-500/10 rounded-[2rem] blur-3xl opacity-0 group-hover:opacity-100 transition duration-700"
                     >
                     </div>
 
                     <div
-                        class="bg-brand-blue rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50"
+                        class="bg-brand-500 rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl shadow-black/50"
                     >
                         {/* Terminal Header */}
                         <div
@@ -149,16 +149,16 @@ import Icon from "../../components/ui/Icon";
                                 </div>
                             </div>
                             <span
-                                class="text-[10px] text-gray-400 font-medium tracking-[0.2em] uppercase font-mono"
+                                class="text-[10px] text-neutral-400 font-medium tracking-[0.2em] uppercase font-mono"
                             >
                                 google-maps.nav
                             </span>
                             <div class="flex items-center gap-2">
                                 <span
-                                    class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"
+                                    class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"
                                 ></span>
                                 <span
-                                    class="text-[9px] text-brand-accent font-mono uppercase tracking-wider"
+                                    class="text-[9px] text-accent-500 font-mono uppercase tracking-wider"
                                 >
                                     LIVE LOCATION
                                 </span>
@@ -183,11 +183,11 @@ import Icon from "../../components/ui/Icon";
                         <div
                             class="bg-[#1e293b] px-4 py-2 flex items-center justify-between border-t border-white/5"
                         >
-                            <span class="text-[9px] font-mono text-gray-500">
+                            <span class="text-[9px] font-mono text-neutral-500">
                                 coords: 14.2930, -89.9111
                             </span>
                             <span
-                                class="text-[9px] font-mono text-brand-accent"
+                                class="text-[9px] font-mono text-accent-500"
                             >
                                 ● METROPLAZA JUTIAPA
                             </span>
